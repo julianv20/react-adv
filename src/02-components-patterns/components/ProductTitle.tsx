@@ -4,14 +4,15 @@ import styles from '../styles/styles.module.css'
 
 interface Props {
   className?: string
+  title?: string
 }
 
-export const ProductTitle = ({ className }: Props) => {
+export const ProductTitle = ({ className, title }: Props) => {
   const { product } = useContext(ProductContext)
 
   return (
     <span className={`${styles.productDescription} ${className}`}>
-      {product.title}
+      {title ? title : product.title}
     </span>
   )
 }
